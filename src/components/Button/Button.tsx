@@ -1,10 +1,11 @@
 import React from "react";
-
-export interface ButtonProps {
-  label: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ label }) => {
-  return <button>{label}</button>;
+import {
+  Button as MuiButton,
+  ButtonProps as MuiButtonProps,
+} from "@mui/material";
+type ButtonProps = Pick<MuiButtonProps, "children" | "color" | "variant">;
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
+  return <MuiButton {...rest}>{children}</MuiButton>;
 };
+
 export default Button;
