@@ -4,7 +4,7 @@ import {
   ButtonProps as MuiButtonProps,
 } from "@mui/material";
 type ButtonProps = Pick<MuiButtonProps, "children" | "color" | "variant">;
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
+const Button = ({ children, ...rest }: ButtonProps) => {
   return <MuiButton {...rest}>{children}</MuiButton>;
 };
 
